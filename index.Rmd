@@ -41,22 +41,11 @@ Based on Stock and Watson, ch. 2
 
 # Distributions
 
-## Random variables
-
-- A random variable assigns a **real number** to every possible outcome of a random process
-
-- A random variable takes **different values** depending on the outcomes of the random process under study
-
-  **Notation**: We often denote a random variable by an upper case letter, say, $X$, and a particular realized value of $X$ by the corresponding lower case letter, $x$
-
-
-
-
 ## Probability
 
-- The probability that $X=x$, denoted $P(X = x)$, is the **proportion of times $X$ take on the value $x$ in many, many independent realizations** of $X$
+- Suppose $X$ is a random variable; the probability that $X=x$ is the **proportion of times $X$ take on the value $x$ in many, many independent realizations** of $X$
 
-- For example, consider the random variable $X$ constructed from a coin flip with potential outcomes $\{H,T\}$:
+- For example, consider the random variable $X$ constructed from a coin flip with potential outcomes $\{H,T\}$
 
   $$X = \left\{
   \begin{array}{ll}
