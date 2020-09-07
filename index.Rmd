@@ -122,7 +122,7 @@ Based on Stock and Watson, ch. 2
   equivalently, $F_X$ is the (definite) integral of $f_X$
 
   <div class="box">
-  $$f_X(x) = \frac{d}{dx} F_X(x); \quad F_X(x) = \int^x F_X(z)dz$$
+  $$f_X(x) = \frac{d}{dx} F_X(x); \quad F_X(x) = \int^x f_X(z)dz$$
   </div>
   
 
@@ -246,6 +246,8 @@ mtext('0.025 ', side=2, at=c(-4.5,pnorm(-1.96)),las = 2)
 ## Summary
 
 - $P(X = x)$, is the proportion of times $X$ takes the value $x$ in many independent realizations of $X$
+
+- The distribution of a random variable specifies the probability for each value taken by the random variable
 
 - The probabilities with which a discrete random variable takes on different values are given by the PMF
 
