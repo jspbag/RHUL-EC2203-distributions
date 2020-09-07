@@ -95,7 +95,7 @@ Based on Stock and Watson, ch. 2
   
   a **positive**, **increasing** function of $x$ that take on values between 0 and 1
   
-## The CDF and PMF of a discrete random variable
+## The CDF and PMF of discrete random variables
   
 - When $X$ is a discrete random variable, $F_X$ is the cumulative sum of $f_X$
 
@@ -126,7 +126,7 @@ Based on Stock and Watson, ch. 2
   
   hence, the total area under the PDF $f_X(x)$ is 1.
 
-## The probability density function (cont'd)
+## The CDF and PDF of continouus random variables
 
 - When $X$ is a continuous, $f_X$ is the derivative of $F_X$; 
 
