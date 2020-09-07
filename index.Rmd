@@ -76,14 +76,13 @@ Based on Stock and Watson, ch. 2
 
 ## The cumulative distribution function
 
-- The **cumulative distribution function (CDF)** of a discrete random variable $X$ is a function $F_X$ such that
+- The **cumulative distribution function (CDF)** of a random variable $X$ is a function $F_X$ such that
 
   <div class="box">
   $$F_X(a) = P(X \leq a)$$
   </div>
   
-- The CDF is a **positive**, **increasing** function of $a$ that take on values between 0 and 1
-  
+
 <!-- ## The CDF and PMF of discrete random variables -->
 
 <!-- - When $X$ is a discrete random variable, $F_X$ is the cumulative sum of $f_X$ -->
@@ -92,29 +91,20 @@ Based on Stock and Watson, ch. 2
 <!--   $$F_X(x) = \sum_{z \leq x} f_X(z)$$ -->
 <!--   </div> -->
   
-## The CDF of a continuous random variable
+## The CDF and PDF of a continuous random variable
 
-- The CDF of a **continuous** random variable $X$ is defined exactly as for discrete random variables:
+- The definition of the cumulative distribution function extends to **continuous** random variables
 
-  <div class="box">
-  $$F_X(a) = P(X \leq a)$$
-  </div>
-  
-
-## The probability density function
-
-- The PMF is unfit for continuous random variables; instead, introduce the **probability density function (PDF)**, $f_X$
-
-- The area under the PDF $f_X$ between two points is equal to the probability that $X$ takes a value between those points:
-
-  $$\int_a^{b} f_X(x) dx = F_X(b) - F_X(a)$$
-  
-## The CDF and PDF of continouus random variables
+- The PMF is unfit for continuous random variables; instead, introduce the **probability density function (PDF)**
 
   <div class="box">
-  $$f_X(a) = \frac{d}{da} F_X(a); \quad F_X(a) = \int^a_{-\infty} f_X(x)dx$$
+  $$f_X(a) = \frac{d}{da} F_X(a)$$
   </div>
+
+- The area under the PDF $f_X$ between two points is equal to the probability that $X$ takes a value between those points
+
   
+
 
 ## The Normal PDF and CDF
 
@@ -221,13 +211,13 @@ box(which = "plot",
     lty = "solid",
     lwd = 3)
 
-segments(1.96, -1, 1.96, pnorm(1.96), col = "black", lty = 2, lwd = 3)
-segments(-4, pnorm(1.96), 1.96, pnorm(1.96), col = "black", lty = 2, lwd = 3)
-mtext('0.975 ', side=2, at=c(-4.5,pnorm(1.96)),las = 2)
-
-segments(-1.96, -1, -1.96, pnorm(-1.96), col = "black", lty = 2, lwd = 3)
-segments(-4, pnorm(-1.96), -1.96, pnorm(-1.96), col = "black", lty = 2, lwd = 3)
-mtext('0.025 ', side=2, at=c(-4.5,pnorm(-1.96)),las = 2)
+# segments(1.96, -1, 1.96, pnorm(1.96), col = "black", lty = 2, lwd = 3)
+# segments(-4, pnorm(1.96), 1.96, pnorm(1.96), col = "black", lty = 2, lwd = 3)
+# mtext('0.975 ', side=2, at=c(-4.5,pnorm(1.96)),las = 2)
+# 
+# segments(-1.96, -1, -1.96, pnorm(-1.96), col = "black", lty = 2, lwd = 3)
+# segments(-4, pnorm(-1.96), -1.96, pnorm(-1.96), col = "black", lty = 2, lwd = 3)
+# mtext('0.025 ', side=2, at=c(-4.5,pnorm(-1.96)),las = 2)
 ```
 
 

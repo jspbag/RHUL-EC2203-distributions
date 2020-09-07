@@ -498,37 +498,26 @@ EC2203 | Royal Holloway | 2020/21
 </section><section id="the-cumulative-distribution-function" class="slide level2">
 <h2>The cumulative distribution function</h2>
 <ul>
-<li><p>The <strong>cumulative distribution function (CDF)</strong> of a discrete random variable <span class="math inline">\(X\)</span> is a function <span class="math inline">\(F_X\)</span> such that</p>
+<li><p>The <strong>cumulative distribution function (CDF)</strong> of a random variable <span class="math inline">\(X\)</span> is a function <span class="math inline">\(F_X\)</span> such that</p>
 <div class="box">
 <p><span class="math display">\[F_X(a) = P(X \leq a)\]</span></p>
 </div></li>
-<li><p>The CDF is a <strong>positive</strong>, <strong>increasing</strong> function of <span class="math inline">\(a\)</span> that take on values between 0 and 1</p></li>
 </ul>
 <!-- ## The CDF and PMF of discrete random variables -->
 <!-- - When $X$ is a discrete random variable, $F_X$ is the cumulative sum of $f_X$ -->
 <!--   <div class="box"> -->
 <!--   $$F_X(x) = \sum_{z \leq x} f_X(z)$$ -->
 <!--   </div> -->
-</section><section id="the-cdf-of-a-continuous-random-variable" class="slide level2">
-<h2>The CDF of a continuous random variable</h2>
+</section><section id="the-cdf-and-pdf-of-a-continuous-random-variable" class="slide level2">
+<h2>The CDF and PDF of a continuous random variable</h2>
 <ul>
-<li><p>The CDF of a <strong>continuous</strong> random variable <span class="math inline">\(X\)</span> is defined exactly as for discrete random variables:</p>
+<li><p>The definition of the cumulative distribution function extends to <strong>continuous</strong> random variables</p></li>
+<li><p>The PMF is unfit for continuous random variables; instead, introduce the <strong>probability density function (PDF)</strong></p>
 <div class="box">
-<p><span class="math display">\[F_X(a) = P(X \leq a)\]</span></p>
+<p><span class="math display">\[f_X(a) = \frac{d}{da} F_X(a)\]</span></p>
 </div></li>
+<li><p>The area under the PDF <span class="math inline">\(f_X\)</span> between two points is equal to the probability that <span class="math inline">\(X\)</span> takes a value between those points</p></li>
 </ul>
-</section><section id="the-probability-density-function" class="slide level2">
-<h2>The probability density function</h2>
-<ul>
-<li><p>The PMF is unfit for continuous random variables; instead, introduce the <strong>probability density function (PDF)</strong>, <span class="math inline">\(f_X\)</span></p></li>
-<li><p>The area under the PDF <span class="math inline">\(f_X\)</span> between two points is equal to the probability that <span class="math inline">\(X\)</span> takes a value between those points:</p>
-<p><span class="math display">\[\int_a^{b} f_X(x) dx = F_X(b) - F_X(a)\]</span></p></li>
-</ul>
-</section><section id="the-cdf-and-pdf-of-continouus-random-variables" class="slide level2">
-<h2>The CDF and PDF of continouus random variables</h2>
-<div class="box">
-<span class="math display">\[f_X(a) = \frac{d}{da} F_X(a); \quad F_X(a) = \int^a_{-\infty} f_X(x)dx\]</span>
-</div>
 </section><section id="the-normal-pdf-and-cdf" class="slide level2">
 <h2>The Normal PDF and CDF</h2>
 <p><img data-src="index_files/figure-revealjs/unnamed-chunk-1-1.png" /><!-- --></p>
