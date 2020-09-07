@@ -1,0 +1,266 @@
+---
+pagetitle: Distributions
+output: 
+  revealjs::revealjs_presentation:
+    incremental: false
+    theme: solarized
+    self_contained: false
+    # reveal_plugins: ["menu","notes","chalkboard"]
+    reveal_plugins: ["menu"]
+    highlight: pygments
+    center: true
+    transition: none
+    background_transition: none 
+    reveal_options:
+      # chalkboard:
+      #   theme: whiteboard
+      #   toggleNotesButton: true
+      #   toggleChalkboardButton: true
+      menu:
+        numbers: true
+      slideNumber: true
+      previewLinks: false
+    fig_caption: true
+    css: mystyle.css
+    
+--- 
+
+<section>
+
+<h1>Distributions</h1>
+
+Based on Stock and Watson, ch. 2
+
+<br>
+
+<h2>[Jesper Bagger](mailto:jesper.bagger@rhul.ac.uk)</h2>
+
+<h3>EC2203 | Royal Holloway | 2020/21</h3>
+
+</section>
+
+# Distributions
+
+## Random variables
+
+- A random variable assigns a **real number** to every possible outcome of a random process
+
+- A random variable takes **different values** depending on the outcomes of the random process under study
+
+  **Notation**: We often denote a random variable by an upper case letter, say, $X$, and a particular realized value of $X$ by the corresponding lower case letter, $x$
+
+
+
+
+## Probability
+
+- The probability that $X=x$, denoted $P(X = x)$, is the **proportion of times $X$ take on the value $x$ in many, many independent realizations** of $X$
+
+- For example, consider the random variable $X$ constructed from a coin flip with potential outcomes $\{H,T\}$:
+
+  $$X = \left\{
+  \begin{array}{ll}
+  1 & \text{if } H, \\
+  0 & \text{if } T;
+  \end{array}
+  \right.$$
+
+  
+  then, $P(X = 1)$ is the proportion of times that $X=1$ occurred the in many, many coin-flip repetitions
+
+
+## Distributions
+
+- The **distribution** of a random variable specifies the probability of realizing *each* value of the random variable
+
+- Distinguish b/w **discrete** and **continuous** random variables
+
+## The probability mass function 
+
+- The **probability mass function (PMF)** of a **discrete** random variable $X$ is a function $f_X$ such that
+
+  <div class="box">
+  $$f_X(x) = P(X = x); \quad  \sum_x f_X(x) = 1$$
+  </div>
+  
+- The PMF is a list of values taken by the random variable $X$ together with a list of associated probabilities 
+
+## The cumulative distribution function
+
+- The **cumulative distribution function (CDF)** of a discrete random variable $X$ is a function $F_X$ such that
+
+  <div class="box">
+  $$F_X(x) = P(X \leq x)$$
+  </div>
+  
+  a **positive**, **increasing** function of $x$ that take on values between 0 and 1
+  
+## The CDF and PMF of a discrete random variable
+  
+- When $X$ is a discrete random variable, $F_X$ is the cumulative sum of $f_X$
+
+  <div class="box">
+  $$F_X(x) = \sum_{z \leq x} f_X(z)$$
+  </div>
+  
+## The CDF of a continuous random variable
+
+- The CDF of a **continuous** random variable $X$ is defined exactly as for discrete random variables:
+
+  <div class="box">
+  $$F_X(x) = P(X \leq x)$$
+  </div>
+  
+  again, a **positive**, **increasing** function that take on values between 0 and 1
+  
+
+## The probability density function
+
+- The PMF is unfit for continuous random variables; instead, introduce the **probability density function (PDF)** 
+
+  Like the PMF, the PDF is usually denoted by a lower case letter. So if, $X$ is continuous, the PDF is $f_X(x)$
+
+- The area under the PDF $f_X$ between two points is equal to the probability that $X$ takes a value between those points:
+
+  $$\int_a^{b} f_X(x) dx = F_X(b) - F_X(a);$$
+  
+  hence, the total area under the PDF $f_X(x)$ is 1.
+
+## The probability density function (cont'd)
+
+- When $X$ is a continuous, $f_X$ is the derivative of $F_X$; 
+
+  equivalently, $F_X$ is the (definite) integral of $f_X$
+
+  <div class="box">
+  $$f_X(x) = \frac{d}{dx} F_X(x); \quad F_X(x) = \int^x F_X(z)dz$$
+  </div>
+  
+
+## The Normal PDF and CDF
+
+```{r echo=FALSE, error=FALSE, warning=FALSE}
+par(mfrow=c(2,1), mar = c(2,4.1,1,4.1))
+# draw a plot of the N(0,1) PDF
+x <- seq(-3.5,3.5,length=200)
+pdf <- dnorm(x)
+plot(x,pdf,
+      type = "l",
+      cex.axis = 1.25, 
+      cex.lab = 1.25, 
+      xlim = c(-3.5, 3.5),
+      ylab = "Density",
+      xlab = " ",
+      col = "blue",
+      lwd = 3,
+      panel.first = grid(nx = NULL, 
+                        ny = NULL, 
+                        col = "lightgray", 
+                        lty = "dotted", 
+                        lwd = 2)) 
+box(which = "plot", 
+    lty = "solid", 
+    lwd = 3)
+# draw a plot of the N(0,1) CDF
+x <- seq(-3.5,3.5,length=200)
+cdf <- pnorm(x)
+plot(x,cdf,
+      type = "l",
+      cex.axis = 1.25, 
+      cex.lab = 1.25, 
+      xlim = c(-3.5, 3.5),
+      ylab = "Probability",
+      xlab = " ",
+      col = "blue",
+      lwd = 3,
+      panel.first = grid(nx = NULL, 
+                        ny = NULL, 
+                        col = "lightgray", 
+                        lty = "dotted", 
+                        lwd = 2)) 
+box(which = "plot", 
+    lty = "solid", 
+    lwd = 3)
+
+```
+
+
+## The Normal PDF and CDF
+
+```{r echo=FALSE, error=FALSE, warning=FALSE}
+par(mfrow=c(2,1), mar = c(2,4.1,1,4.1))
+# draw a plot of the N(0,1) PDF
+
+x <- seq(-3.5,3.5,length=200)
+pdf <- dnorm(x)
+plot(x,pdf,
+      type = "l",
+      cex.axis = 1.25, 
+      cex.lab = 1.25, 
+      xlim = c(-3.5, 3.5),
+      ylab = "Density",
+      xlab = " ",
+      col = "blue",
+      lwd = 3,
+      panel.first = grid(nx = NULL, 
+                        ny = NULL, 
+                        col = "lightgray", 
+                        lty = "dotted", 
+                        lwd = 2)) 
+box(which = "plot", 
+    lty = "solid", 
+    lwd = 3)
+
+# The shaded area
+xshade <- seq(-1.96,1.96,length=200)
+pdfshade <- dnorm(xshade)
+polygon(c(-1.96,xshade,1.96),c(0,pdfshade,0), col="lightgray", lwd = 0.1)
+lines(x,pdf,
+      lwd = 3,
+      col="blue")
+
+text(x = 0,y = 0.15,"Area: 0.95")
+
+# draw a plot of the N(0,1) CDF
+x <- seq(-3.5,3.5,length=200)
+cdf <- pnorm(x)
+plot(x,cdf,
+      type = "l",
+      cex.axis = 1.25, 
+      cex.lab = 1.25, 
+      xlim = c(-3.5, 3.5),
+      ylab = "Probability",
+      xlab = " ",
+      col = "blue",
+      lwd = 3,
+      panel.first = grid(nx = NULL, 
+                        ny = NULL, 
+                        col = "lightgray", 
+                        lty = "dotted", 
+                        lwd = 2)) 
+box(which = "plot",
+    lty = "solid",
+    lwd = 3)
+
+segments(1.96, -1, 1.96, pnorm(1.96), col = "black", lty = 2, lwd = 3)
+segments(-4, pnorm(1.96), 1.96, pnorm(1.96), col = "black", lty = 2, lwd = 3)
+mtext('0.975 ', side=2, at=c(-4.5,pnorm(1.96)),las = 2)
+
+segments(-1.96, -1, -1.96, pnorm(-1.96), col = "black", lty = 2, lwd = 3)
+segments(-4, pnorm(-1.96), -1.96, pnorm(-1.96), col = "black", lty = 2, lwd = 3)
+mtext('0.025 ', side=2, at=c(-4.5,pnorm(-1.96)),las = 2)
+```
+
+
+# Summary
+
+## Summary
+
+- $P(X = x)$, is the proportion of times $X$ takes the value $x$ in many independent realizations of $X$
+
+- The probabilities with which a discrete random variable takes on different values are given by the PMF
+
+- The probabilities with which a continuous random variable takes on different values are given by the PDF
+
+- The CDF gives the probability that a random variable takes a value less than or equal to a specific value
+
