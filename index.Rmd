@@ -43,7 +43,7 @@ Based on Stock and Watson, ch. 2
 
 ## Probability
 
-- Suppose $X$ is a random variable; the probability that $X=x$ is the **proportion of times $X$ take on the value $x$ in many, many independent realizations** of $X$
+- Suppose $X$ is a random variable; the probability that $X=a$ is the **proportion of times $X$ take on the value $a$ in many, many independent realizations** of $X$
 
 - For example, consider the random variable $X$ constructed from a coin flip with potential outcomes $\{H,T\}$
 
@@ -69,7 +69,7 @@ Based on Stock and Watson, ch. 2
 - The **probability mass function (PMF)** of a **discrete** random variable $X$ is a function $f_X$ such that
 
   <div class="box">
-  $$f_X(x) = P(X = x); \quad  \sum_x f_X(x) = 1$$
+  $$f_X(a) = P(X = a); \quad  \sum_a f_X(a) = 1$$
   </div>
   
 - The PMF is a list of values taken by the random variable $X$ together with a list of associated probabilities 
@@ -79,50 +79,40 @@ Based on Stock and Watson, ch. 2
 - The **cumulative distribution function (CDF)** of a discrete random variable $X$ is a function $F_X$ such that
 
   <div class="box">
-  $$F_X(x) = P(X \leq x)$$
+  $$F_X(a) = P(X \leq a)$$
   </div>
   
-  a **positive**, **increasing** function of $x$ that take on values between 0 and 1
+- The CDF is a **positive**, **increasing** function of $a$ that take on values between 0 and 1
   
-## The CDF and PMF of discrete random variables
-  
-- When $X$ is a discrete random variable, $F_X$ is the cumulative sum of $f_X$
+<!-- ## The CDF and PMF of discrete random variables -->
 
-  <div class="box">
-  $$F_X(x) = \sum_{z \leq x} f_X(z)$$
-  </div>
+<!-- - When $X$ is a discrete random variable, $F_X$ is the cumulative sum of $f_X$ -->
+
+<!--   <div class="box"> -->
+<!--   $$F_X(x) = \sum_{z \leq x} f_X(z)$$ -->
+<!--   </div> -->
   
 ## The CDF of a continuous random variable
 
 - The CDF of a **continuous** random variable $X$ is defined exactly as for discrete random variables:
 
   <div class="box">
-  $$F_X(x) = P(X \leq x)$$
+  $$F_X(a) = P(X \leq a)$$
   </div>
-  
-  again, a **positive**, **increasing** function that take on values between 0 and 1
   
 
 ## The probability density function
 
-- The PMF is unfit for continuous random variables; instead, introduce the **probability density function (PDF)** 
-
-  Like the PMF, the PDF is usually denoted by a lower case letter. So if, $X$ is continuous, the PDF is $f_X(x)$
+- The PMF is unfit for continuous random variables; instead, introduce the **probability density function (PDF)**, $f_X$
 
 - The area under the PDF $f_X$ between two points is equal to the probability that $X$ takes a value between those points:
 
-  $$\int_a^{b} f_X(x) dx = F_X(b) - F_X(a);$$
+  $$\int_a^{b} f_X(x) dx = F_X(b) - F_X(a)$$
   
-  hence, the total area under the PDF $f_X(x)$ is 1.
-
 ## The CDF and PDF of continouus random variables
 
-- When $X$ is a continuous, $f_X$ is the derivative of $F_X$; 
-
-  equivalently, $F_X$ is the (definite) integral of $f_X$
-
   <div class="box">
-  $$f_X(x) = \frac{d}{dx} F_X(x); \quad F_X(x) = \int^x f_X(z)dz$$
+  $$f_X(a) = \frac{d}{da} F_X(a); \quad F_X(a) = \int^a_{-\infty} f_X(x)dx$$
   </div>
   
 
@@ -245,7 +235,7 @@ mtext('0.025 ', side=2, at=c(-4.5,pnorm(-1.96)),las = 2)
 
 ## Summary
 
-- $P(X = x)$, is the proportion of times $X$ takes the value $x$ in many independent realizations of $X$
+- $P(X = a)$, is the proportion of times $X$ takes the value $a$ in many independent realizations of $X$
 
 - The distribution of a random variable specifies the probability for each value taken by the random variable
 

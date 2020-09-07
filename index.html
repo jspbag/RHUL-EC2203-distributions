@@ -470,7 +470,7 @@ EC2203 | Royal Holloway | 2020/21
 <section><section id="distributions" class="title-slide slide level1"><h1>Distributions</h1></section><section id="probability" class="slide level2">
 <h2>Probability</h2>
 <ul>
-<li><p>Suppose <span class="math inline">\(X\)</span> is a random variable; the probability that <span class="math inline">\(X=x\)</span> is the <strong>proportion of times <span class="math inline">\(X\)</span> take on the value <span class="math inline">\(x\)</span> in many, many independent realizations</strong> of <span class="math inline">\(X\)</span></p></li>
+<li><p>Suppose <span class="math inline">\(X\)</span> is a random variable; the probability that <span class="math inline">\(X=a\)</span> is the <strong>proportion of times <span class="math inline">\(X\)</span> take on the value <span class="math inline">\(a\)</span> in many, many independent realizations</strong> of <span class="math inline">\(X\)</span></p></li>
 <li><p>For example, consider the random variable <span class="math inline">\(X\)</span> constructed from a coin flip with potential outcomes <span class="math inline">\(\{H,T\}\)</span></p>
 <p><span class="math display">\[X = \left\{
 \begin{array}{ll}
@@ -491,7 +491,7 @@ EC2203 | Royal Holloway | 2020/21
 <ul>
 <li><p>The <strong>probability mass function (PMF)</strong> of a <strong>discrete</strong> random variable <span class="math inline">\(X\)</span> is a function <span class="math inline">\(f_X\)</span> such that</p>
 <div class="box">
-<p><span class="math display">\[f_X(x) = P(X = x); \quad  \sum_x f_X(x) = 1\]</span></p>
+<p><span class="math display">\[f_X(a) = P(X = a); \quad  \sum_a f_X(a) = 1\]</span></p>
 </div></li>
 <li><p>The PMF is a list of values taken by the random variable <span class="math inline">\(X\)</span> together with a list of associated probabilities</p></li>
 </ul>
@@ -500,45 +500,35 @@ EC2203 | Royal Holloway | 2020/21
 <ul>
 <li><p>The <strong>cumulative distribution function (CDF)</strong> of a discrete random variable <span class="math inline">\(X\)</span> is a function <span class="math inline">\(F_X\)</span> such that</p>
 <div class="box">
-<p><span class="math display">\[F_X(x) = P(X \leq x)\]</span></p>
-</div>
-<p>a <strong>positive</strong>, <strong>increasing</strong> function of <span class="math inline">\(x\)</span> that take on values between 0 and 1</p></li>
-</ul>
-</section><section id="the-cdf-and-pmf-of-discrete-random-variables" class="slide level2">
-<h2>The CDF and PMF of discrete random variables</h2>
-<ul>
-<li><p>When <span class="math inline">\(X\)</span> is a discrete random variable, <span class="math inline">\(F_X\)</span> is the cumulative sum of <span class="math inline">\(f_X\)</span></p>
-<div class="box">
-<p><span class="math display">\[F_X(x) = \sum_{z \leq x} f_X(z)\]</span></p>
+<p><span class="math display">\[F_X(a) = P(X \leq a)\]</span></p>
 </div></li>
+<li><p>The CDF is a <strong>positive</strong>, <strong>increasing</strong> function of <span class="math inline">\(a\)</span> that take on values between 0 and 1</p></li>
 </ul>
+<!-- ## The CDF and PMF of discrete random variables -->
+<!-- - When $X$ is a discrete random variable, $F_X$ is the cumulative sum of $f_X$ -->
+<!--   <div class="box"> -->
+<!--   $$F_X(x) = \sum_{z \leq x} f_X(z)$$ -->
+<!--   </div> -->
 </section><section id="the-cdf-of-a-continuous-random-variable" class="slide level2">
 <h2>The CDF of a continuous random variable</h2>
 <ul>
 <li><p>The CDF of a <strong>continuous</strong> random variable <span class="math inline">\(X\)</span> is defined exactly as for discrete random variables:</p>
 <div class="box">
-<p><span class="math display">\[F_X(x) = P(X \leq x)\]</span></p>
-</div>
-<p>again, a <strong>positive</strong>, <strong>increasing</strong> function that take on values between 0 and 1</p></li>
+<p><span class="math display">\[F_X(a) = P(X \leq a)\]</span></p>
+</div></li>
 </ul>
 </section><section id="the-probability-density-function" class="slide level2">
 <h2>The probability density function</h2>
 <ul>
-<li><p>The PMF is unfit for continuous random variables; instead, introduce the <strong>probability density function (PDF)</strong></p>
-<p>Like the PMF, the PDF is usually denoted by a lower case letter. So if, <span class="math inline">\(X\)</span> is continuous, the PDF is <span class="math inline">\(f_X(x)\)</span></p></li>
+<li><p>The PMF is unfit for continuous random variables; instead, introduce the <strong>probability density function (PDF)</strong>, <span class="math inline">\(f_X\)</span></p></li>
 <li><p>The area under the PDF <span class="math inline">\(f_X\)</span> between two points is equal to the probability that <span class="math inline">\(X\)</span> takes a value between those points:</p>
-<p><span class="math display">\[\int_a^{b} f_X(x) dx = F_X(b) - F_X(a);\]</span></p>
-<p>hence, the total area under the PDF <span class="math inline">\(f_X(x)\)</span> is 1.</p></li>
+<p><span class="math display">\[\int_a^{b} f_X(x) dx = F_X(b) - F_X(a)\]</span></p></li>
 </ul>
 </section><section id="the-cdf-and-pdf-of-continouus-random-variables" class="slide level2">
 <h2>The CDF and PDF of continouus random variables</h2>
-<ul>
-<li><p>When <span class="math inline">\(X\)</span> is a continuous, <span class="math inline">\(f_X\)</span> is the derivative of <span class="math inline">\(F_X\)</span>;</p>
-<p>equivalently, <span class="math inline">\(F_X\)</span> is the (definite) integral of <span class="math inline">\(f_X\)</span></p>
 <div class="box">
-<p><span class="math display">\[f_X(x) = \frac{d}{dx} F_X(x); \quad F_X(x) = \int^x f_X(z)dz\]</span></p>
-</div></li>
-</ul>
+<span class="math display">\[f_X(a) = \frac{d}{da} F_X(a); \quad F_X(a) = \int^a_{-\infty} f_X(x)dx\]</span>
+</div>
 </section><section id="the-normal-pdf-and-cdf" class="slide level2">
 <h2>The Normal PDF and CDF</h2>
 <p><img data-src="index_files/figure-revealjs/unnamed-chunk-1-1.png" /><!-- --></p>
@@ -549,7 +539,7 @@ EC2203 | Royal Holloway | 2020/21
 <section><section id="summary" class="title-slide slide level1"><h1>Summary</h1></section><section id="summary-1" class="slide level2">
 <h2>Summary</h2>
 <ul>
-<li><p><span class="math inline">\(P(X = x)\)</span>, is the proportion of times <span class="math inline">\(X\)</span> takes the value <span class="math inline">\(x\)</span> in many independent realizations of <span class="math inline">\(X\)</span></p></li>
+<li><p><span class="math inline">\(P(X = a)\)</span>, is the proportion of times <span class="math inline">\(X\)</span> takes the value <span class="math inline">\(a\)</span> in many independent realizations of <span class="math inline">\(X\)</span></p></li>
 <li><p>The distribution of a random variable specifies the probability for each value taken by the random variable</p></li>
 <li><p>The probabilities with which a discrete random variable takes on different values are given by the PMF</p></li>
 <li><p>The probabilities with which a continuous random variable takes on different values are given by the PDF</p></li>
