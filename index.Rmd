@@ -225,13 +225,11 @@ box(which = "plot",
 
 ## Summary
 
-- $P(X = a)$, is the proportion of times $X$ takes the value $a$ in many independent realizations of $X$
-
 - The distribution of a random variable specifies the probability for each value taken by the random variable
 
 - The probabilities with which a discrete random variable takes on different values are given by the PMF
 
-- The probabilities with which a continuous random variable takes on different values are given by the PDF
+- The probabilities with which a continuous random variable takes on different values can be computed from the PDF
 
 - The CDF gives the probability that a random variable takes a value less than or equal to a specific value
 
